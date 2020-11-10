@@ -25,7 +25,7 @@ if($result->num_rows > 0){
   //output data of each row
   while($row = $result->fetch_assoc()){
     ?>
-    <div class="card">
+    <div class="card" style="width: 33%;">
   <img src="IMG/<?php echo $row['Id'];?>.jpg" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?php echo $row['nom'];?></h5>
