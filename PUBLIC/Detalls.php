@@ -17,7 +17,7 @@
 
 <?php
 
-$codi = $_GET['id'];
+$codi = $_GET['Id'];
 include '../CONFIG/configBD.php';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,7 +26,7 @@ if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT nom, descripcio, preu FROM product where Id = $codi";
+$sql = "SELECT Id, nom, descripcio, preu FROM product where Id = $codi";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
@@ -38,11 +38,18 @@ if($result->num_rows > 0){
         <div class="col-sm-11">
           <?php echo $row['nom'];?>
         </div>
-
+      </div>
+      <div class="row">
+        <div class="col-sm-11">
+          <?php echo $row['nom'];?>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm-11">
           <?php echo $row['descripcio'];?>
         </div>
-
+      </div>
+      <div class="row">
         <div class="col-sm-11">
           <?php echo $row['preu'];?>
         </div>
