@@ -27,7 +27,7 @@ if($result->num_rows > 0){
     ?>
     <img src="IMG/<?php echo $row['Id'];?> .jpg" alt="...">
     <? echo $row['nom'];?>
-    <a href="Detalls.php?codi=<?php echo $row['Id'];?>"><button class="stretched-link">Detalls</button></a>
+    <a href="Detalls.php?codi=<?php echo $row['Id'];?>"><button class="btn btn-primary stretched-link">Detalls</button></a>
     <?php
   }
 }else{
