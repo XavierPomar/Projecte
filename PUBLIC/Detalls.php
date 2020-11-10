@@ -9,11 +9,6 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="IMG/<?php echo $row['Id'];?>jpg" class="img-fluid" alt="...">
-      </div>
-    </div>
 
 <?php
 
@@ -29,10 +24,12 @@ if($conn -> connect_error){
 $sql = "SELECT Id, nom, descripcio, preu FROM product where Id = $codi";
 $result = $conn->query($sql);
 
-if($result->num_rows > 0){
-  //output data of each row
-  while($row = $result->fetch_assoc()){
     ?>
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="IMG/<?php echo $row['Id'];?>.jpg" class="img-fluid" alt="...">
+      </div>
+    </div>
     <div class="col-sm-6">
       <div class="row">
         <div class="col-sm-11">
@@ -58,10 +55,6 @@ if($result->num_rows > 0){
     
     <a href="Llista.php"><button class="btn btn-primary stretched-link">Torna</button></a>
     <?php
-  }
-}else{
-  echo " 0 results ";
-}
 $conn->close();
 ?>
 
