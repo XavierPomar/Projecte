@@ -11,13 +11,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <img src="IMG/<?php echo $row['Id'];?> .jpg" class="img-fluid" alt="...">
+        <img src="IMG/<?php echo $row['Id'];?>jpg" class="img-fluid" alt="...">
       </div>
     </div>
 
 <?php
 
-$codi = $_GET['Id'];
+$codi = $_GET['id'];
 include '../CONFIG/configBD.php';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,7 +26,7 @@ if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Id, nom FROM product";
+$sql = "SELECT nom, descripcio, preu FROM product where Id = $codi";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
