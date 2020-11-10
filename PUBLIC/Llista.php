@@ -25,7 +25,6 @@ if($result->num_rows > 0){
   //output data of each row
   while($row = $result->fetch_assoc()){
     ?>
-    <div class="row col-sm-6" style="width: 33%">
     <div class="card">
   <img src="IMG/<?php echo $row['Id'];?>.jpg" alt="...">
   <div class="card-body">
@@ -34,7 +33,6 @@ if($result->num_rows > 0){
   <div class="card-body">
     <a href="Detalls.php?codi=<?php echo $row['Id'];?>"><button class="btn btn-primary stretched-link">Detalls</button></a>
   </div>
-</div>
 </div>
     <?php
   }
