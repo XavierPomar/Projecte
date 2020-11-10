@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -25,7 +25,7 @@ if($result->num_rows > 0){
   //output data of each row
   while($row = $result->fetch_assoc()){
     ?>
-    <img src="img/<?php echo $row['Id'];?> .jpg" alt="...">
+    <img src="IMG/<?php echo $row['Id'];?> .jpg" alt="...">
     <? echo $row['nom'];?>
     <a href="Detalls.php?codi=<?php echo $row['Id'];?>"><button class="stretched-link">Detalls</button></a>
     <?php
