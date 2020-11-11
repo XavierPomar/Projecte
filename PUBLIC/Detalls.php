@@ -12,7 +12,6 @@
 
 <?php
 
-$codi = $_GET['Id'];
 include '../CONFIG/configBD.php';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,41 +19,31 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT Id, nom, descripcio, preu FROM product where Id = $codi";
+$id_get = $_GET['id'];
+$sql = "SELECT id, nom, descripcio, preu FROM product where id = $id_get";
 $result = $conn->query($sql);
 
+    if($result -> num_rows > 0){
+      while($row = $result -> fetch_assoc()){
     ?>
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="IMG/<?php echo $row['Id'];?>.jpg" class="img-fluid" alt="...">
+    <div class="card mb-3" style="max-width: 33%;">
+      <div class="row no-grutters">
+        <div class="col-mb-4">
+        <img src="IMG/<?php echo $row['id'];?>.jpg" class="card-img" alt="...">
       </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
+        <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
+        <h3 class ="card-text"><?php echo $row['preu']; ?></h3>
+      </div>
+     </div>
     </div>
-    <div class="col-sm-6">
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['nom'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['nom'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['descripcio'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['preu'];?>
-        </div>
-      </div>
-    </div>
-    
+   </div>
     <a href="Llista.php"><button class="btn btn-primary stretched-link">Torna</button></a>
     <?php
+      }
+    }  
 $conn->close();
 ?>
 
