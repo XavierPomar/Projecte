@@ -12,7 +12,6 @@
 
 <?php
 
-$codi = $_GET['Id'];
 include '../CONFIG/configBD.php';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,41 +19,30 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT Id, nom, descripcio, preu FROM product where Id = $codi";
+$id_get = $_GET['id'];
+$sql = "SELECT id, nom, descripcio, preu FROM product where id = $id_get";
 $result = $conn->query($sql);
 
+    if($result -> num_rows > 0){
+      while($row = $result -> fetch_assoc()){
     ?>
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="IMG/<?php echo $row['Id'];?>.jpg" class="img-fluid" alt="...">
-      </div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="IMG/<?php echo $row['id'];?>.jpg" class="d-block w-100" alt="...">
+            <div style="float: right; width: 29%; margin-right: 90px" class="col-sm-12">
+            <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
+            <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
+            <h3 class ="card-text"><?php echo $row['preu']; ?></h3>
+          </div>
+        </div>
     </div>
-    <div class="col-sm-6">
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['nom'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['nom'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['descripcio'];?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-11">
-          <?php echo $row['preu'];?>
-        </div>
-      </div>
-    </div>
-    
-    <a href="Llista.php"><button class="btn btn-primary stretched-link">Torna</button></a>
+</div>
+
+    <a href="Llista.php"><button class="btn btn-primary stretched-link" style="float : right; margin-right: 150px;">Torna</button></a>
     <?php
+      }
+    }  
 $conn->close();
 ?>
 

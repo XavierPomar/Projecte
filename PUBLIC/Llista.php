@@ -18,27 +18,17 @@ if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Id, nom FROM product";
+$sql = "SELECT id, nom FROM product";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   //output data of each row
   while($row = $result->fetch_assoc()){
     ?>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card" >
-  <img src="IMG/<?php echo $row['Id'];?>.jpg" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $row['nom'];?></h5>
-  </div>
-  <div class="card-body">
-    <a href="Detalls.php?codi=<?php echo $row['Id'];?>"><button class="btn btn-primary stretched-link">Detalls</button></a>
-  </div>
-</div>
-</div>
-</div>
-    <?php
+	<img src="IMG/<?php echo $row['id'];?>.jpg" alt="...">
+    <?php echo $row['nom'];?>
+	<a href="Detalls.php?id=<?php echo $row['id']; ?>"><button class="btn btn-primary stretched-link">Detalls</button></a>
+ <?php
   }
 }else{
   echo " 0 results ";
