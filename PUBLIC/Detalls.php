@@ -40,6 +40,8 @@ $result = $conn->query($sql);
 </div>
 
     <a href="Llista.php"><button class="btn btn-primary stretched-link" style="float : right; margin-right: 150px;">Torna</button></a>
+
+    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary stretched-link" style="float : right; margin-right: 225px;">Afegir al Carro</button></a>
     <?php
       }
     }  
