@@ -29,8 +29,8 @@ $result = $conn->query($sql);
       while($row = $result -> fetch_assoc()){
     ?>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="max-width: 35%">
-  <div class="carousel-inner">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner" style="width: 35%; position: absolute;>
     <div class="carousel-item active">
       <img src="IMG/<?php echo $row['id'];?>.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
     </div>
@@ -41,25 +41,25 @@ $result = $conn->query($sql);
       <img src="IMG/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
     </div>
   </div>
-  <div style="float: right; max-width: 60%; margin-right: 90px" class="col-sm-12">
+  <div style="float: right; max-width: 55%; margin-left: 250px; margin-top: 20px; " class="col-sm-8">
             <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
             <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
             <h3 class ="card-text">PREU : <?php echo $row['preu']; ?> €</h3>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev" style="margin-left: -200px;">
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev" style="margin-left: -60px;">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next" style="margin-left: -680px;">
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next" style="margin-right: 580px;">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 
 
-    <a href="Llista.php"><button class="btn btn-primary" style="float : right; ">Torna</button></a>
+    <a href="Llista.php"><button class="btn btn-primary" style="float : right; margin-top: 50px; margin-left: 620px;"><i class="fa fa-home">Inici</i></button></a>
 
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary" style="float: right; margin-right: 150px;">Afegir al Carro</button></a>
+    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary" style="float: right; margin-left: 150px; margin-top: 50px;"><i class="fa fa-shopping-cart">Afegir al Carro</i></button></a>
     <?php
       }
     }  
