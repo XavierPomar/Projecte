@@ -37,7 +37,7 @@
                      echo "<p class='card-text'>".$row["preu"]." € </p>";
                 echo "</div>";
                  echo "<div class='card-footer'>";
-                  echo "<button class='boto1'>";
+                  echo "<button class='btn btn-dark'>";
                    echo "<a href='Detalls.php?id=".$row["id"]."&nom=".$row["nom"]."&descripcio=".$row["descripcio"]."&preu=".$row["preu"]."'>Detalls</a>";
                  echo "</button>";
                  echo "</div>";
