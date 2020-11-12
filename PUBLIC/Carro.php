@@ -13,6 +13,7 @@
 <?php
 
 include '../CONFIG/configBD.php';
+include 'capçalera.html';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
