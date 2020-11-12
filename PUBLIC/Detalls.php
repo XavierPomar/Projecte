@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="container">
+    <div class="row">
 
 <?php
 
@@ -26,22 +28,38 @@ $result = $conn->query($sql);
     if($result -> num_rows > 0){
       while($row = $result -> fetch_assoc()){
     ?>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="IMG/<?php echo $row['id'];?>.jpg" class="d-block w-100" alt="...">
-            <div style="float: right; width: 29%; margin-right: 90px" class="col-sm-12">
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="max-width: 60%">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="IMG/<?php echo $row['id'];?>.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
+    </div>
+    <div class="carousel-item">
+      <img src="IMG/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
+    </div>
+    <div class="carousel-item">
+      <img src="IMG/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
+    </div>
+  </div>
+  <div style="float: right; max-width: 40%; margin-right: 90px" class="col-sm-12">
             <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
             <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
-            <h3 class ="card-text"><?php echo $row['preu']; ?></h3>
-          </div>
-        </div>
-    </div>
+            <h3 class ="card-text">PREU : <?php echo $row['preu']; ?> €</h3>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
 
     <a href="Llista.php"><button class="btn btn-primary stretched-link" style="float : right; margin-right: 150px;">Torna</button></a>
 
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary stretched-link" style="float : right; margin-right: 225px;">Afegir al Carro</button></a>
+    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary stretched-link">Afegir al Carro</button></a>
     <?php
       }
     }  
