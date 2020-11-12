@@ -14,7 +14,7 @@
 
    <?php
 
-   include 'configBD.php';
+   include '../CONFIG/configBD.php';
 
    $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,14 +22,14 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT id, nom, descripcio, preu FROM producte";
+    $sql = "SELECT id, nom, descripcio, preu FROM product";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
 
-        echo "<div class='col-sm-6 col-md-3'>";
+        echo "<div class='col-sm-6 col-md-4'>";
             echo "<div class='card text-center'>";
                 echo "<img class='card-img-top' src='IMG/".$row["id"].".jpg' alt='".$row["nom"]."'>";
                  echo  "<div class='card-body'>";
