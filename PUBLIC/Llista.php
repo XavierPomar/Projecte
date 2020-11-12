@@ -15,7 +15,7 @@
    <?php
 
    include '../CONFIG/configBD.php';
-
+   include 'capçalera.html';
    $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
