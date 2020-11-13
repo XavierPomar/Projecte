@@ -4,48 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="shortcut icon" href="IMG/logo.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
 </head>
-<body>
+<body id="b">
 <div class="container">
-<div class="row row-cols-1 row-cols-md-3">
+    <div class="row">
 
-<?php
-include '../CONFIG/configBD.php';
-//create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if($conn -> connect_error){
-  die("Connection failed: " . $conn->connect_error);
-}
+   <?php
 
-$sql = "SELECT id, nom, preu FROM product";
-$result = $conn->query($sql);
+   include '../CONFIG/configBD.php';
+   include 'capçalera.html';
+   $conn = new mysqli($servername, $username, $password, $dbname);
 
-if($result->num_rows > 0){
-  //output data of each row
-while($row = $result->fetch_assoc()){
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT id, nom, descripcio, preu FROM product";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+    while($row = $result->fetch_assoc()) {
+
+        echo "<div class='col-sm-6 col-md-4' id='div1'>";
+            echo "<div class='card text-center'id='c' >";
+                echo "<img class='card-img-top' src='IMG/Cachimba/".$row["id"].".jpg' alt='".$row["nom"]."'>";
+                 echo  "<div class='card-body'>";
+                    echo "<h5 class='card-title'> ".$row["nom"]."</h5>";
+                     echo "<p class='card-text'>".$row["preu"]." € </p>";
+                echo "</div>";
+                 echo "<div class='card-footer'>";
+                  echo "<button class='btn btn-dark'>";
+                   echo "<a href='Detalls.php?id=".$row["id"]."&nom=".$row["nom"]."&descripcio=".$row["descripcio"]."&preu=".$row["preu"]."'>Detalls</a>";
+                 echo "</button>";
+                 echo "</div>";
+             echo "</div>";
+        echo "</div>";
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
     ?>
-  <div class="col mb-4">
-    <div class="card">
-      <img src="IMG/<?php echo $row['id'];?>.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card-title" style="text-align : center"><?php echo $row['nom'];?></h2><br>
-	<h2 class="card-text"><?php echo $row['preu'];?>€</h2>
-	<a href="Detalls.php?id=<?php echo $row['id']; ?>"><button style="margin-left : 20px " class ="btn btn-primary stretched-link">Detalls</button></a>
-      </div>
     </div>
-  </div>
- <?php
-  }
-}else{
-  echo " 0 results ";
-}
-$conn->close();
+<?php
+include 'footer.html';
 ?>
-</div>
-
 </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

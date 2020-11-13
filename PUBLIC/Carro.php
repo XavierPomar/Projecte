@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
-
+  <link rel="shortcut icon" href="IMG/logo.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -13,6 +13,7 @@
 <?php
 
 include '../CONFIG/configBD.php';
+include 'capçalera.html';
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection

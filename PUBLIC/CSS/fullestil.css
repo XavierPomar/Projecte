@@ -1,0 +1,61 @@
+#b{
+  background-color: whitesmoke;
+}
+
+#nav1{
+  background-color: lightgrey;
+  margin-top: 10px;
+}
+
+#div1{
+  margin-top: 20px;
+}
+
+#n1, #n2, #n3 {
+  color: black;
+}
+
+#c{
+  background-color: grey;
+  color : white;
+}
+
+#ci{
+  margin-top: 10px;
+  width: 35%;
+  position: absolute;
+  margin-left: 20px;
+}
+
+#texte{
+  float: right;
+  max-width: 55%;
+  margin-top : 20px; 
+  margin-left : 250px;
+  background-color: grey;
+  margin-right: 20px;
+}
+
+#prev{
+  margin-left: -60px;
+}
+
+#nextb{
+  margin-right: 620px;
+}
+
+#b1 {
+  float: right;
+  margin-top: 50px;
+  margin-left: 620px;
+}
+
+#b2{
+  float: right;
+  margin-top: 50px;
+  margin-left: 150px;
+}
+
+#fo{
+  margin-top: 20px;
+}
