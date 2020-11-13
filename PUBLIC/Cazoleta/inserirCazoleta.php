@@ -19,7 +19,7 @@ $nomI = $_GET['nom'];
 $descripcioI = $_GET['descripcio'];
 $preuI = $_GET['preu'];
 
-   include '../CONFIG/configBD.php';
+   include '../../CONFIG/configBD.php';
 
    $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,10 +27,10 @@ $preuI = $_GET['preu'];
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO product (id, nom, descripcio, preu) VALUES ($idI, '$nomI', '$descripcioI', $preuI)";
+    $sql = "INSERT INTO cazoleta (id, nom, descripcio, preu) VALUES ($idI, '$nomI', '$descripcioI', $preuI)";
 	if ($conn->query($sql) === TRUE) {
 		echo"Has afegit un nou producte";
-  		header("location: http://projecte.com/Llista.php");
+  		header("location: http://projecte.com/Cazoleta/Llista.php");
 }else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
