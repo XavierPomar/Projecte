@@ -4,16 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
-<<<<<<< HEAD
   <link rel="shortcut icon" href="IMG/logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
-=======
-
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
->>>>>>> fac8fe7dfbc9723255f7d9107f6adb8536215f78
 </head>
 <body id="b">
   <div class="container">
@@ -22,12 +16,8 @@
 <?php
 
 include '../CONFIG/configBD.php';
-<<<<<<< HEAD
 include 'capçalera.html';
 
-=======
-      include 'capçalera.html';
->>>>>>> fac8fe7dfbc9723255f7d9107f6adb8536215f78
 //create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -43,7 +33,6 @@ $result = $conn->query($sql);
     ?>
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-<<<<<<< HEAD
   <div class="carousel-inner" id="ci" >
     <div class="carousel-item active">
       <img src="IMG/Cachimba/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
@@ -65,45 +54,14 @@ $result = $conn->query($sql);
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleFade" id="nextb" role="button" data-slide="next">
-=======
-  <div class="carousel-inner" style="width: 35%; position: absolute;>
-    <div class="carousel-item active">
-      <img src="IMG/<?php echo $row['id'];?>.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
-    </div>
-  </div>
-  <div style="float: right; max-width: 55%; margin-left: 250px; margin-top: 20px; " class="col-sm-8">
-            <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
-            <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
-            <h3 class ="card-text">PREU : <?php echo $row['preu']; ?> €</h3>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev" style="margin-left: -60px;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next" style="margin-right: 580px;">
->>>>>>> fac8fe7dfbc9723255f7d9107f6adb8536215f78
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
     <a href="Llista.php"><button class="btn btn-dark" id="b1"><i class="fa fa-home"> Atras</i></button></a>
 
-<<<<<<< HEAD
     <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
  <?php
-=======
-
-    <a href="Llista.php"><button class="btn btn-primary" style="float : right; margin-top: 50px; margin-left: 620px;"><i class="fa fa-home">Inici</i></button></a>
-
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-primary" style="float: right; margin-left: 150px; margin-top: 50px;"><i class="fa fa-shopping-cart">Afegir al Carro</i></button></a>
-    <?php
->>>>>>> fac8fe7dfbc9723255f7d9107f6adb8536215f78
       }
     }  
 $conn->close();
