@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
-  <link rel="shortcut icon" href="IMG/logo.png">
+  <link rel="shortcut icon" href="../IMG/logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/fullestil.css">
 </head>
 <body id="b">
   <div class="container">
@@ -15,7 +15,7 @@
 
 <?php
 
-include '../CONFIG/configBD.php';
+include '../../CONFIG/configBD.php';
 include 'capçalera.html';
 
 //create connection
@@ -25,7 +25,7 @@ if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 $id_get = $_GET['id'];
-$sql = "SELECT id, nom, descripcio, preu FROM product where id = $id_get";
+$sql = "SELECT id, nom, descripcio, preu FROM cazoleta where id = $id_get";
 $result = $conn->query($sql);
 
     if($result -> num_rows > 0){
@@ -35,13 +35,13 @@ $result = $conn->query($sql);
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner" id="ci" >
     <div class="carousel-item active">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
+      <img src="../IMG/Cazoleta/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
     </div>
     <div class="carousel-item">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
+      <img src="../IMG/Cazoleta/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
     </div>
     <div class="carousel-item">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
+      <img src="../IMG/Cazoleta/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
     </div>
   </div>
   <div id="texte" class="col-sm-8">
@@ -58,9 +58,9 @@ $result = $conn->query($sql);
     <span class="sr-only">Next</span>
   </a>
 </div>
-    <a href="Llista.php"><button class="btn btn-dark" id="b1"><i class="fa fa-home"> Atras</i></button></a>
+    <a href="../Llista.php"><button class="btn btn-dark" id="b1"><i class="fa fa-home"> Atras</i></button></a>
 
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
+    <a href="../Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
  <?php
       }
     }  

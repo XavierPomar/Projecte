@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rural Shisha</title>
-  <link rel="shortcut icon" href="IMG/logo.png">
+  <link rel="shortcut icon" href="../IMG/logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/fullestil.css">
 </head>
 <body id="b">
 <div class="container">
@@ -15,7 +15,7 @@
 
    <?php
 
-   include '../CONFIG/configBD.php';
+   include '../../CONFIG/configBD.php';
    include 'capçalera.html';
    $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -23,16 +23,15 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT id, nom, descripcio, preu FROM product";
+    $sql = "SELECT id, nom, descripcio, preu FROM cazoleta";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
-
         echo "<div class='col-sm-6 col-md-4' id='div1'>";
-            echo "<div class='card text-center'id='c'>";
-                echo "<img class='card-img-top' src='IMG/Cachimba/".$row["id"].".jpg' alt='".$row["nom"]."'>";
+	      echo "<div class='card text-center'id='c2' >";
+                echo "<img class='card-img-top' src='../IMG/Cazoleta/".$row["id"].".jpg' alt='".$row["nom"]."'>";
                  echo  "<div class='card-body'>";
                     echo "<h5 class='card-title'> ".$row["nom"]."</h5>";
                      echo "<p class='card-text'>".$row["preu"]." € </p>";

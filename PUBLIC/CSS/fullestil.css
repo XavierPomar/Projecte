@@ -18,6 +18,13 @@
 #c{
   background-color: grey;
   color : white;
+  height: 600px;
+}
+
+#c2{
+  background-color: grey;
+  color: white;
+  height: 700px;
 }
 
 #ci{
