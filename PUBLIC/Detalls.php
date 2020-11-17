@@ -47,7 +47,7 @@ $result = $conn->query($sql);
   <div id="texte" class="col-sm-8">
             <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
             <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
-            <h3 class ="card-text">PREU :<b> <?php echo $row['preu']; ?> € </b></h3>
+            <h3 class ="card-text">PRECIO :<b> <?php echo $row['preu']; ?> € </b></h3>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" id="prev" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
