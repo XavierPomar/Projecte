@@ -68,7 +68,7 @@ include 'capçalera.html';
     </div>
     <div class="col-sm">
       <form action='eliminarSession.php'>
-        <input type="submit" class="btn btn-info btn-lg btn-block" name="eliminarSession" value="Pagar"/>
+        <input type="submit" class="btn btn-dark btn-lg btn-block" name="eliminarSession" value="Pagar"/>
       </form>
     </div>
   </div>
