@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Rural Shisha</title>
+  <title>Rural Shisha - Carrito de la Compra</title>
+  <link rel="shortcut icon" href="IMG/logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
@@ -48,7 +49,7 @@ for($i = 0; $i < count($_SESSION['carro']); $i++){
 
 
 
-$id_post = $_POST['id'];
+$id_get = $_GET['id'];
 $sql = "SELECT id, nom, descripcio, preu FROM product where id = $id_get";
 $result = $conn->query($sql);
 

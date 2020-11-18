@@ -31,24 +31,21 @@ $result = $conn->query($sql);
     if($result -> num_rows > 0){
       while($row = $result -> fetch_assoc()){
     ?>
+<div class="col-md-5">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner " id="ci" >
+      <div class="carousel-item active">
+        <img src="IMG/Cachimba/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
+      </div>
+      <div class="carousel-item">
+        <img src="IMG/Cachimba/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
+      </div>
+      <div class="carousel-item">
+        <img src="IMG/Cachimba/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
+      </div>
+    </div>
+  </div>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner" id="ci" >
-    <div class="carousel-item active">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/Cachimba/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
-    </div>
-  </div>
-  <div id="texte" class="col-sm-8">
-            <h1 class ="card-title"><?php echo $row['nom']; ?></h1>
-            <h3 class ="card-text"><?php echo $row['descripcio']; ?></h3>
-            <h3 class ="card-text">PRECIO :<b> <?php echo $row['preu']; ?> € </b></h3>
-  </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" id="prev" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -58,10 +55,19 @@ $result = $conn->query($sql);
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div id="texte" class="col-md-7">
+  <h1 class="card-title"><?php echo $row['nom'];?> </h1>
+  <h3 class="card-text"><?php echo $row['descripcio'];?></h3>
+  <h3 class="card-text"><b> <?php echo $row['preu'];?> € </b></h3>
+</div>
+
+<div class="container">
     <a href="Llista.php"><button class="btn btn-dark" id="b1"><i class="fa fa-home"> Atras</i></button></a>
 
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
- <?php
+    <a href="Carro1.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
+</div> 
+<?php
       }
     }  
 $conn->close();
