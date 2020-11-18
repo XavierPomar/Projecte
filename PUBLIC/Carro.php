@@ -43,7 +43,6 @@ include 'capçalera.html';
                   $preu = $row['preu'];
         ?>
           <tr>
-            <th scope="row"><?php echo $id ?></th>
             <td><?php echo $nom ?></td>
             <td><?php echo $preu ?></td>
             <td><?php echo $_SESSION['carrito'][$x][1]?></td>
@@ -51,8 +50,8 @@ include 'capçalera.html';
         <?php
 
                 }
-              }
-            }
+              } 
+	    }
           }
 
         ?>
@@ -68,8 +67,8 @@ include 'capçalera.html';
       <a href='Llista.php' class='btn btn-dark btn-lg btn-block'>Seguir Comprando</a>
     </div>
     <div class="col-sm">
-      <form action='destroy_sess.php'>
-        <input type="submit" class="btn btn-info btn-lg btn-block" name="sessDestroy" value="Comprar"/>
+      <form action='eliminarSession.php'>
+        <input type="submit" class="btn btn-info btn-lg btn-block" name="eliminarSession" value="Pagar"/>
       </form>
     </div>
   </div>

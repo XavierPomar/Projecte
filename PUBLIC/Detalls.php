@@ -65,7 +65,7 @@ $result = $conn->query($sql);
 <div class="container">
     <a href="Llista.php"><button class="btn btn-dark" id="b1"><i class="fa fa-home"> Atras</i></button></a>
 
-    <a href="Carro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
+    <a href="AfegirCarro.php?id=<?php echo $row['id'];?>"><button class="btn btn-dark" id="b2"><i class="fa fa-shopping-cart" > Añadir al Carrito</i></button></a>
 </div> 
 <?php
       }
