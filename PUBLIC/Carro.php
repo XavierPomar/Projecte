@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" type="text/css" href="CSS/fullestil.css">
 </head>
-<body>
+<body id="b">
 <?php
 session_start();
 include 'capçalera.html';
@@ -34,7 +34,7 @@ include 'capçalera.html';
               die("Connection failed: " . $conn->connect_error);
             }
             for( $x = 0 ; $x < count($_SESSION['carrito']) ; $x++){
-	      $sql = "SELECT id, nom, preu FROM product WHERE id = ". $_SESSION['carrito'][$x][0] . ";";
+	      $sql = "SELECT id, nom, preu, producte FROM product WHERE id = ". $_SESSION['carrito'][$x][0] . ";";
               $result = $conn->query($sql);
 	      if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){
@@ -48,14 +48,12 @@ include 'capçalera.html';
             <td><?php echo $_SESSION['carrito'][$x][1]?></td>
           </tr>
         <?php
-
                 }
               } 
 	    }
           }
 
         ?>
-
       </tbody>
     </table>
   </div>
@@ -64,7 +62,7 @@ include 'capçalera.html';
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a href='Llista.php' class='btn btn-dark btn-lg btn-block'>Seguir Comprando</a>
+      <a href='LlistaCachimba.php' class='btn btn-dark btn-lg btn-block'>Seguir Comprando</a>
     </div>
     <div class="col-sm">
       <form action='eliminarSession.php'>

@@ -25,7 +25,7 @@ if($conn -> connect_error){
   die("Connection failed: " . $conn->connect_error);
 }
 $id_get = $_GET['id'];
-$sql = "SELECT id, nom, descripcio, preu FROM product where id = $id_get";
+$sql = "SELECT id, nom, descripcio, preu, producte FROM product WHERE (id = $id_get)";
 $result = $conn->query($sql);
 
     if($result -> num_rows > 0){
@@ -35,13 +35,13 @@ $result = $conn->query($sql);
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner " id="ci" >
       <div class="carousel-item active">
-        <img src="IMG/Cachimba/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
+        <img src="IMG/<?php echo $row['id'];?>.jpg" id="i" class="d-block w-100" alt="<?php echo $row['nom']; ?>">
       </div>
       <div class="carousel-item">
-        <img src="IMG/Cachimba/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
+        <img src="IMG/<?php echo $row['id'];?>-1.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-1">
       </div>
       <div class="carousel-item">
-        <img src="IMG/Cachimba/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
+        <img src="IMG/<?php echo $row['id'];?>-2.jpg" class="d-block w-100" alt="<?php echo $row['nom']; ?>-2">
       </div>
     </div>
   </div>
